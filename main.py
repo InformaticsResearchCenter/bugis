@@ -12,11 +12,11 @@ async def home():
     anu='croot'
     return f"Hello, World! {anu}"
 
-@app.router.post("/api/cats")
+@app.router.post("/api")
 async def example(data: FromJSON[CreateCatInput]):
     # in this example, data is bound automatically reading the JSON
     # payload and creating an instance of `CreateCatInput`
-    ...
+    return(data)
 
 
 @app.router.get("/:culture_code/:area")
