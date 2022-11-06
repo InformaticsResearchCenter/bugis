@@ -12,11 +12,8 @@ def site(page):
         return controller.home()
 
     @post("/api")
-    async def example(data: FromJSON[Request]):
-        # in this example, data is bound automatically reading the JSON
-        # payload and creating an instance of `CreateCatInput`
-        data.value.message = 'hai nomor ' + data.value.number
-        return (data.value)
+    async def api(data: FromJSON[Request]):
+        return controller.api(data)
 
     @get("/:culture_code/:area")
     async def culture(culture_code, area):
