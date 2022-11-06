@@ -13,10 +13,7 @@ def site(page):
         # in this example, data is bound automatically reading the JSON
         # payload and creating an instance of `CreateCatInput`
         data.value.message = 'hai nomor ' + data.value.number
-        resp = Response
-        resp.message=data.value.message
-        resp.request=data.items
-        return (resp)
+        return (data.value)
 
     @page.router.get("/:culture_code/:area")
     async def home(culture_code, area):
