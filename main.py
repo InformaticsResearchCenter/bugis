@@ -4,7 +4,7 @@ from blacksheep import Application, FromJSON, FromQuery
 app = Application()
 
 @dataclass
-class CreateCatInput:
+class IteungInput:
     number: str
     message: str
 
@@ -14,11 +14,11 @@ async def home():
     return f"Hello, World! {anu}"
 
 @app.router.post("/api")
-async def example(input: FromJSON[CreateCatInput]):
+async def example(data: FromJSON[IteungInput]):
     # in this example, data is bound automatically reading the JSON
     # payload and creating an instance of `CreateCatInput`
-    input.value.message = 'hai nomor ' + input.value.number
-    return (input.value)
+    data.value.message = 'hai nomor ' + data.value.number
+    return (data.value)
 
 
 @app.router.get("/:culture_code/:area")
