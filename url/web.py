@@ -15,7 +15,7 @@ def site(page):
         data.value.message = 'hai nomor ' + data.value.number
         resp = Response
         resp.message=data.value.message
-        resp.request=data.value
+        resp.request=data.value.dict()
         return (resp)
 
     @page.router.get("/:culture_code/:area")
