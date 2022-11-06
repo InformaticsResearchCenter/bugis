@@ -1,5 +1,5 @@
 from blacksheep import FromJSON, FromQuery
-from model.request import IteungInput
+from model.data import Request, Response
 
 def site(page):
     @page.route("/")
@@ -9,10 +9,11 @@ def site(page):
 
 
     @page.router.post("/api")
-    async def example(data: FromJSON[IteungInput]):
+    async def example(data: FromJSON[Request]):
         # in this example, data is bound automatically reading the JSON
         # payload and creating an instance of `CreateCatInput`
         data.value.message = 'hai nomor ' + data.value.number
+        
         return (data.value)
 
     @page.router.get("/:culture_code/:area")
