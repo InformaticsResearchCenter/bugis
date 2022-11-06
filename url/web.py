@@ -15,6 +15,12 @@ def site(page):
     async def api(data: FromJSON[Request]):
         return controller.api(data)
 
+    @get("/m/:culture_code/:area")
+    async def culture(culture_code, area):
+        # in this example, both parameters are obtained from routes with
+        # matching names
+        return f"Request for: {culture_code} {area}"
+
     @get("/:culture_code/:area")
     async def culture(culture_code, area):
         # in this example, both parameters are obtained from routes with
