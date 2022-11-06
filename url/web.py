@@ -1,5 +1,6 @@
 from blacksheep import FromJSON, FromQuery
 from model.data import Request, Response
+from controller import controller
 
 def site(page):
     url=page.route
@@ -8,8 +9,7 @@ def site(page):
 
     @url("/")
     async def home():
-        anu='croot'
-        return f"Hello, World! {anu}"
+        return controller.home()
 
     @post("/api")
     async def example(data: FromJSON[Request]):
