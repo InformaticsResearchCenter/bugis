@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from blacksheep import Application, json, FromJSON, FromQuery
+from blacksheep import Application, FromJSON, FromQuery
 
 app = Application()
 
@@ -18,6 +18,7 @@ async def example(input: FromJSON[CreateCatInput]):
     # in this example, data is bound automatically reading the JSON
     # payload and creating an instance of `CreateCatInput`
     data = input.value
+    data['message'] = 'ini responnya'
     return (data)
 
 
