@@ -18,8 +18,7 @@ async def example(input: FromJSON[CreateCatInput]):
     # in this example, data is bound automatically reading the JSON
     # payload and creating an instance of `CreateCatInput`
     data = input.value
-    data['message'] = 'ini responnya'
-    return (data)
+    return (type(data))
 
 
 @app.router.get("/:culture_code/:area")
