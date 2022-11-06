@@ -1,8 +1,8 @@
 from blacksheep import Application
-from routes.routes import routes
+from url import web
 
-app = Application()
-routes(app)
+page = Application()
+web.site(page)
 
 
 
