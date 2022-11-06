@@ -16,6 +16,7 @@ async def home():
 async def example(data: FromJSON[CreateCatInput]):
     # in this example, data is bound automatically reading the JSON
     # payload and creating an instance of `CreateCatInput`
+    print(data)
     return(data)
 
 
