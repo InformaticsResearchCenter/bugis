@@ -5,7 +5,8 @@ app = Application()
 
 @dataclass
 class CreateCatInput:
-    name: str
+    number: str
+    message: str
 
 @app.route("/")
 async def home():
@@ -13,10 +14,11 @@ async def home():
     return f"Hello, World! {anu}"
 
 @app.router.post("/api")
-async def example(data: FromJSON[CreateCatInput]):
+async def example(input: FromJSON[CreateCatInput]):
     # in this example, data is bound automatically reading the JSON
     # payload and creating an instance of `CreateCatInput`
-    return json(data)
+    data = input.value
+    return (data)
 
 
 @app.router.get("/:culture_code/:area")
