@@ -2,27 +2,30 @@ from blacksheep import FromJSON, FromQuery
 from model.data import Request, Response
 
 def site(page):
-    @page.route("/")
+    url=page.route
+    get=page.router.get
+    post=page.router.post
+
+    @url("/")
     async def home():
         anu='croot'
         return f"Hello, World! {anu}"
 
-
-    @page.router.post("/api")
+    @post("/api")
     async def example(data: FromJSON[Request]):
         # in this example, data is bound automatically reading the JSON
         # payload and creating an instance of `CreateCatInput`
         data.value.message = 'hai nomor ' + data.value.number
         return (data.value)
 
-    @page.router.get("/:culture_code/:area")
-    async def home(culture_code, area):
+    @get("/:culture_code/:area")
+    async def culture(culture_code, area):
         # in this example, both parameters are obtained from routes with
         # matching names
         return f"Request for: {culture_code} {area}"
 
 
-    @page.router.get("/api/products")
+    @get("/api/products")
     def get_products(
         page: int = 1,
         size: int = 30,
@@ -35,7 +38,7 @@ def site(page):
         ...
 
 
-    @page.router.get("/api/products2")
+    @get("/api/products2")
     def get_products2(
         page: FromQuery[int] = FromQuery(1),
         size: FromQuery[int] = FromQuery(30),
