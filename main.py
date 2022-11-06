@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from blacksheep import Application, FromJSON, FromQuery
+from blacksheep import Application, json, FromJSON, FromQuery
 
 app = Application()
 
