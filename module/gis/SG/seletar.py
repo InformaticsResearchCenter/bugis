@@ -1,2 +1,2 @@
-def hi(gis):
+def airport(gis):
     return gis.value
