@@ -1,8 +1,8 @@
 def home():
-    html=```
+    html = '''
     <html>
     <head>
-    <title>Bugis Framework</title>
+    <title>Bugis Kambing Hitam</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     </head>
     <body>
@@ -12,7 +12,7 @@ def home():
 
     </body>
     </html>
-    ```
+    '''
     return html
 
 def api(data):
