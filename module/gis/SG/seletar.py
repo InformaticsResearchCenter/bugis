@@ -12,7 +12,7 @@ def airport(gis):
 
 def getairport(param):
     sf = shapefile.Reader("static/shp/seletar/airport")
-    rec = sf.record(param)
+    rec = sf.record(int(param))
     return json(
         {
             "shapeType" : sf.shapeType,
