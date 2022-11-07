@@ -1,2 +1,2 @@
-def hi(name):
-    return "hi"+name
+def hi(gis):
+    return gis.value
