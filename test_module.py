@@ -7,4 +7,7 @@ def inc(x):
 
 def test_answer():
     gis=data.Gis(103.87068815153685,1.4155690028533765,"seletar airport")
-    assert seletar.airport(gis) == 5
+    resp ='{
+  "message": "shp file seletar airport was created"
+}'
+    assert seletar.airport(gis) == resp
