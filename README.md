@@ -6,6 +6,7 @@ pip install -r requirements.txt
 uvicorn server:app --port 44777 --reload
 ```
 ## Auto Deploy
+
 branch staging : https://bugis-staging.herokuapp.com/
 branch main : https://bugis-prod.herokuapp.com/
 
