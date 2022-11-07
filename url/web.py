@@ -1,5 +1,5 @@
 from blacksheep import FromJSON, FromQuery
-from model.data import Request, Response
+from model.data import Request,Gis
 from controller import controller
 
 def site(page):
