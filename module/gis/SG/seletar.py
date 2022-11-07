@@ -7,4 +7,5 @@ def airport(gis):
     w.point(gis.value.longitude, gis.value.latitude) 
     w.record(gis.value.name)
     w.close()
-    return json(f{"message" : "shp file {gis.value.name} created"})
+    msg='shp file'+gis.value.name+' created'
+    return json({"message" : msg})

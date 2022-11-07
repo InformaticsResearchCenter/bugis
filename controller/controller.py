@@ -1,19 +1,6 @@
 def home():
-    html = '''
-    <html>
-    <head>
-    <title>Bugis Kambing Hitam</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    </head>
-    <body>
-
-    <h1>Welcome to Bugis Framework</h1>
-    <p>Mencari kambing hitam sambil makan bugis</p>
-
-    </body>
-    </html>
-    '''
-    return html
+    anu='croot'
+    return f"Hobi cari kambing hitam?, sambil makan bugis! {anu}"
 
 def api(data):
     data.value.message = 'hai nomor ' + data.value.number
