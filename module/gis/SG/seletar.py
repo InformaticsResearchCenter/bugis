@@ -16,6 +16,6 @@ def getairport(param):
         {
             "shapeType" : sf.shapeType,
             "len shapes" : len(sf),
-            "param" : param
+            "fields" : sf.fields
         }
     )
