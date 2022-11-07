@@ -9,3 +9,9 @@ class Request:
 class Response:
     message : str
     request : Request
+
+@dataclass
+class Gis:
+    longitude : float
+    latitude : float
+    name : str

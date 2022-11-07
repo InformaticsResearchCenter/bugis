@@ -15,8 +15,6 @@ def site(page):
     async def api(data: FromJSON[Request]):
         return controller.api(data)
 
-    @post("/m/gis/:culture_code/:area")
-    async def gis(culture_code, area,data: FromJSON[Request]):
-        # in this example, both parameters are obtained from routes with
-        # matching names
-        return f"Request for: {culture_code} {area}"
+    @post("/m/gis/:module_name/:module_func")
+    async def gis(module_name, module_func,param: FromJSON[Gis]):
+        return controller.gis(module_name,module_func,param)
