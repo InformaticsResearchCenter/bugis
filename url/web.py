@@ -18,3 +18,7 @@ def site(page):
     @post("/m/gis/:country_code/:module_name/:module_func")
     async def gis(country_code,module_name, module_func,param: FromJSON[Gis]):
         return controller.gis(country_code,module_name,module_func,param)
+
+    @get("/m/gis/:country_code/:module_name/:module_func/:param")
+    async def gis(country_code,module_name, module_func,param):
+        return controller.gis(country_code,module_name,module_func,param)
