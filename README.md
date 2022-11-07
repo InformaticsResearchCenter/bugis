@@ -7,8 +7,8 @@ uvicorn server:app --port 44777 --reload
 ```
 ## Auto Deploy
 you might test first in staging branch before pull request to main
-branch staging : https://bugis-staging.herokuapp.com/
-branch main : https://bugis-prod.herokuapp.com/
+* branch staging : https://bugis-staging.herokuapp.com/
+* branch main : https://bugis-prod.herokuapp.com/
 
 ## Example
 just build your module in module folder, use static folder for save your data.
